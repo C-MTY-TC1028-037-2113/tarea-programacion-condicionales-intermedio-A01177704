@@ -1,42 +1,42 @@
 def main():
     #escribe tu código abajo de esta línea
-    y = int(input("Año: "))
-    m = int(input("Mes: "))
-    d = int(input("Día: "))
+    year = int(input("Año: "))
+    month = int(input("Mes: "))
+    day = int(input("Día: "))
     # Meses con 31 dias: 1, 3, 5, 7, 8, 10, 12
-    if m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12:
-        if d == 31:
-            d = 1
-            if m == 12:
-                m = 1
-                y = y + 1
+    if month == 1 or month == 3 or month == 5 or month == 7 or month == 8 or month == 10 or month == 12:
+        if day == 31:
+            day = 1
+            if month == 12:
+                month = 1
+                year = year + 1
             else:
-                m = m + 1
+                month = month + 1
         else:
-            d = d + 1
+            day = day + 1
     # Meses con 30 dias: 4, 6, 9, 11
-    elif m == 4 or m == 6 or m == 9 or m == 11:
-        if d == 30:
-            d = 1
-            m =m + 1
+    elif month == 4 or month == 6 or month == 9 or month == 11:
+        if day == 30:
+            day = 1
+            month =month + 1
         else:
-            d = d + 1
+            day = day + 1
     # Mes 2 puede tener 28 o 29 dias
     else:
-        if d == 29 and y % 4 == 0 and y % 100 != 0 or y % 400 == 0:
-            d = 1
-            m = m + 1
-        elif d == 28:
-            if y % 4 == 0 and y % 100 != 0 or y % 400 == 0:
-                d = d + 1
+        if day == 29 and year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+            day = 1
+            month = month + 1
+        elif day == 28:
+            if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+                day = day + 1
             else:
-                d = 1
-                m = m + 1
+                day = 1
+                month = month + 1
         else:
-            d = d + 1
-    print(y)
-    print(m)
-    print(d)
+            day = day + 1
+    print(year)
+    print(month)
+    print(day)
 
 if __name__=='__main__':
     main()
